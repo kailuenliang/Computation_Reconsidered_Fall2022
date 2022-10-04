@@ -1,3 +1,4 @@
+# Write your code here :-)
 
 
 import board
@@ -29,13 +30,18 @@ touch_TX = touchio.TouchIn(board.TX)
 
 # lets change the threshold
 
-# touch_A1.threshold = 8000
-# touch_A2.threshold = 8000
-# touch_A3.threshold = 8000
-# touch_A4.threshold = 8000
-# touch_A5.threshold = 8000
-# touch_A6.threshold = 8000
-# touch_TX.threshold = 8000
+threshold = 600
+
+touch_A1.threshold = threshold
+touch_A2.threshold = threshold
+touch_A3.threshold = threshold
+touch_A4.threshold = threshold
+touch_A5.threshold = threshold
+touch_A6.threshold = threshold
+touch_TX.threshold = threshold
+
+
+# exercise : turn on pixel closest to capacitive touch pad
 
 
 while True:
@@ -53,7 +59,9 @@ while True:
         print("A6 touched!")
     if touch_TX.value:
         print("TX touched!")
+    else:
+        for i in range(10):
+            pixels[i] = (0, 0, 0)
 
-    time.sleep(0.01)
 
 

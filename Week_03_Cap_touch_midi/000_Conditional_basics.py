@@ -16,48 +16,78 @@ import neopixel
 pixels = neopixel.NeoPixel(board.NEOPIXEL, 10, brightness=0.1, auto_write=True)
 
 
-## assign color by pixel[0-9] = (r,g,b)
+### Part 1:
+### https://www.geeksforgeeks.org/relational-operators-in-python/
+
+### try defining a few variables and using the relational operators and see what prints
+
+a = 10
+b = 20
+
+# returns a boolean value (True or  False)
+print(a < b)
+
+# >
+
+# ==
+
+# !=
+
+#  <=
+
+#  >=
+
+## Part 2: Conditional Statements
+
+# kai = True
+# this_class = "fun"
+# a = 20
+
+# if this_class == "fun":
+#     print("coding can be fun!")
+
+# if a < 100:
+#     print("This is true ... do something here!")
+
+## ------------ if elif else  ------------------------
+
+# if a > 100:
+#     print("if")
+# elif a > 50:
+#     print("elif")
+# elif a > 15:
+#     print("second elif")
+# else:
+#     print("none are true")
 
 
-var = 100
 
-if var == 200:
-   print("1 - Got a true expression value")
-   print(var)
-elif var == 150:
-   print("2 - Got a true expression value")
-   print(var)
+## ------------------------- Part 3 Logical operators -----------------
+
+## and
+
+isSunday = True
+isHoliday = True
+
+if isHoliday and isSunday:
+    print('Sunday is a Funday!!')
 else:
-   print("3 - Got a false expression value")
-   print(var)
+    print('Not holiday!! Boss is on your ass to start working :(')
 
+## or
 
-# ------------------------------------------------------------
+isGalleryNight = True
+amTooTipsy = True
 
-## 2.1: Comparison operators  == , <= , >=, != , <, >
-## https://www.tutorialspoint.com/python/comparison_operators_example.htm
-
-if var <= 100:
-    print("var is less than or equals: ")
-
-if var != 100:
-    print("var does not equal value: ")
-
-
-# ------------------------------------------------------------
-## 2.2 _ Python Logical Operators# Write your code here :-)
-
-## and,  or
-
-
-
-# ------------------------------------------------------------
-
-## 2.3 # True False
-
-class_is_fun = True
-
-if(class_is_fun):
-    print("YAY. Class is fun")
+if isGalleryNight and not amTooTipsy:
+    print("Keep having fun looking and supporting each other's art.")
+elif isGalleryNight and amTooTipsy:
+    print("Maybe you should go home and relax")
+elif not isGalleryNight:
+    print("its not gallery night, its only Monday")
 else:
-    print("This shit is tiring my brain. I need a coffee.")
+    print("Not sure what day it is.")
+
+
+
+
