@@ -106,6 +106,19 @@ input_floor = normalized_rms(samples) + 10
 
 
 
+## -------------VARIABLES ---------------------------------------
+
+
+audio_threshold = 500
+counter = 0
+num_pixels = 10
+
+red = (155, 0 , 0)
+green = (0, 100, 0 )
+blue = (0, 0, 200 )
+off = (0, 0, 0)
+
+
 ## ----------------------PROGRAM ------------------------------------------------------
 ## -------------------------------------------------------------
 
@@ -117,11 +130,36 @@ while True:
     audio_level = normalized_rms(samples)
     # print(audio_level)
 
+    if audio_level > audio_threshold:
+
+        counter += 1  #
+
+        if counter == 1:
+            for i in range(num_pixels):
+                pixels[i] = red
+                time.sleep(0.05)
+
+        elif counter == 2:
+            for i in range(num_pixels):
+                pixels[i] = green
+                time.sleep(0.1)
+
+        elif counter == 3:
+            for i in range(num_pixels):
+                pixels[i] = blue
+                time.sleep(0.1)
+
+        elif counter == 4:
+            for i in range(num_pixels):
+                pixels[i] = off
+                time.sleep(0.1)
+
+            counter = 0
 
 
 
-
-
+        print("current counter: ", counter )
+        time.sleep(0.1)
 
 
 
